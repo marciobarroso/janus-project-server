@@ -1,0 +1,91 @@
+{
+    "extends": [
+        "eslint:recommended",
+        "airbnb-base"
+    ],
+    "plugins": [
+        "mocha"
+    ],
+    "rules": {
+        "mocha/no-exclusive-tests": "error",
+        "arrow-body-style": 0,
+        "consistent-return": "error",
+        "indent": ["error", 2, {
+            "SwitchCase": 1,
+            "VariableDeclarator": {
+                "let": 2,
+                "const": 2
+            }
+        }],
+        "object-curly-newline": 0,
+        "object-curly-spacing": [2, "never"],
+        "one-var": ["error", { initialized: "never" }],
+        "one-var-declaration-per-line": ["error", "initializations"],
+        "no-else-return": 1,
+        "no-console": 1,
+        "quotes": ["error", "single"],
+        "space-before-function-paren": ["error", {
+            "anonymous": "always",
+            "named": "never"
+        }],
+        "no-use-before-define": ["warn", "nofunc"],
+        "comma-dangle": ["error",  {
+            "arrays": "never",
+            "objects": "never",
+            "imports": "never",
+            "exports": "never",
+            "functions": "ignore",
+        }],
+        "import/no-extraneous-dependencies": ["error", {
+            "devDependencies": true
+        }],
+        "import/prefer-default-export": 0,
+        "no-underscore-dangle": "error",
+        "complexity": [ "error", {
+            "max": 10
+        }],
+        "max-statements": ["error", 20],
+        "max-depth": ["error", 4],
+        "no-param-reassign": [ "error", {
+            "props": false
+        }],
+        "arrow-parens": ["error", "as-needed", {
+            "requireForBlockBody": true
+        }],
+        "linebreak-style": ["error", "unix"],
+        "no-cond-assign": ["error", "always"],
+        "prefer-const": "error",
+        "no-var": "error",
+        "no-unused-expressions": 0,
+        "padded-blocks": ["error", "never"],
+        "max-len": ["error", {
+            "code": 110,
+            "comments": 150,
+            "ignoreTemplateLiterals": true,
+            "ignoreRegExpLiterals": true,
+            "ignoreUrls": true,
+            "ignoreStrings": true
+        }],
+        "max-params": ["warn", 4],
+        "func-style": ["error", "expression"]
+    },
+    "env": {
+        "node": true,
+        "mocha": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module"
+    },
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "moduleDirectory": [
+                    "node_modules",
+                    "src",
+                    "test"
+                ]
+            }
+        }
+    }
+}

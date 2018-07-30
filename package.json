@@ -1,0 +1,39 @@
+{
+  "name": "janus-project-server",
+  "version": "0.0.1",
+  "description": "Gateway to connect, collect and serve information for other devices",
+  "private": true,
+  "main": "index.js",
+  "engines": {
+    "npm": "5.6.0",
+    "node": "8.9.4"
+  },
+  "author": "Marcio Barroso",
+  "license": "ISC",
+  "directories": {
+    "test": "test",
+    "lib": "src"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "mongoose": "^5.0.1",
+    "convict": "^4.3.1",
+    "http-status": "^1.1.0",
+    "restify": "^7.1.2",
+    "restify-cors-middleware": "^1.0.1",
+    "restify-router": "^0.5.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "nodemon": "^1.14.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com:marciobarroso/janus-project-server.git"
+  }
+}
