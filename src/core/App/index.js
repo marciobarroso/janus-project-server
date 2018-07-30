@@ -42,7 +42,7 @@ const App = () => {
   Router.applyRoutes(server);
 
   server.listen(Settings.get('app.port'), function () {
-    console.log('%s listening at %s', server.name, `${Settings.get('app.ip')}:${Settings.get('app.port')}`);
+    console.log('%s listening at %s in %s mode', server.name, `${Settings.get('app.ip')}:${Settings.get('app.port')}`, Settings.get('env'));
   });
 }
 
