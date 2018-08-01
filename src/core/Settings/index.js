@@ -1,5 +1,7 @@
 import convict from 'convict';
 
+const applicationKey = "janus-project";
+
 const settings = convict({
 	env: {
 		doc: "The application environment.",
@@ -11,14 +13,24 @@ const settings = convict({
 		name: {
 			doc: "The application name.",
 			format: String,
-			default: "Janus Project Server"
+			default: "Janus Project"
 		},
+    key: {
+      doc: "Project Key Name",
+      format: String,
+      default: `${applicationKey}`
+    },
 		version: {
 			doc: "The application version.",
 			format: '*',
 			default: 'none',
 			env: 'npm_package_version'
 		},
+    prefix: {
+      doc: "URL prefix",
+      format: "*",
+      default: `/ws/api/${applicationKey}/v1`
+    },
 		ip: {
 			doc: "The IP address to bind.",
 			format: "ipaddress",

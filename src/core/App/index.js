@@ -18,7 +18,7 @@ const App = () => {
     'content-type',
     'country',
     'language',
-    'access-token'
+    'x-access-token'
   ];
 
   const cors = corsMiddleware({
@@ -39,7 +39,7 @@ const App = () => {
 
   server.on('restifyError', ErrorHandler);
 
-  Router.applyRoutes(server);
+  Router.applyRoutes(server, Settings.get('app.prefix'));
 
   server.listen(Settings.get('app.port'), function () {
     console.log('%s listening at %s in %s mode', server.name, `${Settings.get('app.ip')}:${Settings.get('app.port')}`, Settings.get('env'));
