@@ -1,7 +1,7 @@
 NPM_BIN=./node_modules/.bin
 TEST_ENV=NODE_ENV=test NODE_PATH=./src:./test
 NODE_ENV ?= dev
-MOCHA_OPTS=--reporter spec --compilers js:babel-core/register --slow 5000 --exit --recursive
+MOCHA_OPTS=--reporter spec --require babel-core/register --slow 5000 --exit --recursive
 
 start: clean
 	$(NPM_BIN)/babel src -d build && \
