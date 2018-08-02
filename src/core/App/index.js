@@ -37,6 +37,12 @@ const App = () => {
   server.use(restify.plugins.gzipResponse());
   server.use(ResponseHeaders);
 
+  server.get('/favicon.ico', function (req, res) {
+    res.writeHead(200, { 'Content-Type': 'image/x-icon' });
+    res.end();
+    return;
+  });
+
   server.on('restifyError', ErrorHandler);
 
   Router.applyRoutes(server, Settings.get('app.prefix'));
