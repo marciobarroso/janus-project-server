@@ -29,13 +29,26 @@ const me = (token) => {
       return decoded;
     });
 
-    UserService.get(decoded.id)
+    return UserService.get(decoded.id)
       .then(user => resolve(user))
       .catch(error => reject(error));
   });
 };
 
+const login = (email, password) => {
+  return UserService.login(email, password)
+    .then(user => {
+      return jwt.sign({ id: user._id }, Settings.get('app.secret'), {
+        expiresIn: 86400 // expires in 24 hours
+      });
+    })
+    .catch(error => {
+      throw error;
+    });
+};
+
 export {
   register,
-  me
+  me,
+  login
 };

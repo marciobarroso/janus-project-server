@@ -5,7 +5,7 @@ const register = (req, res, next) => {
     .then(token => {
       res.send({auth: true, token});
       return next();
-    }).catch(error => next(error))
+    }).catch(error => next(error));
 };
 
 const me = (req, res, next) => {
@@ -17,7 +17,16 @@ const me = (req, res, next) => {
     }).catch(error => next(error));
 };
 
+const login = (req, res, next) => {
+  return AuthService.login(req.body.email, req.body.password)
+    .then(token => {
+      res.send({auth: true, token});
+      return next();
+    }).catch(error => next(error));
+};
+
 export {
   register,
-  me
+  me,
+  login
 };

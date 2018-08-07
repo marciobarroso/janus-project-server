@@ -1,0 +1,52 @@
+{
+	"info": {
+		"_postman_id": "b6723296-d274-4953-9cbb-8683f97ce7ec",
+		"name": "Janus-project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"_postman_id": "15ba2297-b01c-4963-8f0c-4b40690b4fd4",
+			"name": "Authorization Register",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "6ec7ed53-d508-4920-8041-8c40d922dbdb",
+			"name": "Authorization Me",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViNmExZmEzYTBhYmJhOGExZmFlNjE5NCIsImlhdCI6MTUzMzY4MTU3MSwiZXhwIjoxNTMzNzY3OTcxfQ.FRlR3LidDzxr9GJRoV9Ntx9_Dkdcmt-_-a9I3_4mD_4"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "localhost:8080/ws/api/janus-project/v1/auth/me",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ws",
+						"api",
+						"janus-project",
+						"v1",
+						"auth",
+						"me"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

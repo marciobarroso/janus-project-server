@@ -1,5 +1,7 @@
 import {Router} from 'restify-router';
 
+import AuthMiddleware from 'core/middlewares/Auth';
+
 import HealthCheck from 'controllers/HealthCheckController'
 import * as AuthController from 'controllers/AuthController';
 
@@ -9,8 +11,7 @@ const mock = (req, res, next) => {res.send(); return next();};
 
 router.get('/health-check', HealthCheck);
 router.post('/auth/register', AuthController.register);
-router.get('/auth/me', AuthController.me);
-router.post('/auth/login', mock);
-router.get('/auth/logout', mock);
+router.get('/auth/me', AuthMiddleware, AuthController.me);
+router.post('/auth/login', AuthController.login);
 
 export default router;
